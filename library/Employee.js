@@ -5,7 +5,11 @@ class Employee {
 		this.email = email;
 	}
 	getName() {
-		return this.name;
+		if (this.name !== null) {
+			return this.name;
+		} else {
+			throw new Error("Missing name");
+		}
 	}
 	getId() {
 		return this.id;

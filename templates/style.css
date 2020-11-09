@@ -1,6 +1,16 @@
 #team-hdr {
 	text-align: center;
+	font-size: 75px;
 	color: seashell;
 	background-color: red;
 	height: 100px;
+	width: 100%;
 }
+.card-hdr {
+	width: 100%
+}
+.card-body {
+	float: left;
+	width: 75px;
+}
+

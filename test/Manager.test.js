@@ -17,6 +17,6 @@ describe("Manager class", () => {
 			"mdavis@gmail.com",
 			2126783209
 		);
-		expect(manger().getRole()).toEqual(manager);
+		expect(manger.getRole()).toEqual("Manager");
 	});
 });

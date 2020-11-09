@@ -18,6 +18,11 @@ describe("Engineer class", () => {
 			"Jim@gmail.com",
 			"codingJim"
 		);
+
 		expect(engineer.getRole()).toEqual("Engineer");
+	});
+	it("should throw an error", () => {
+		const engineer = new Engineer("Tom", "Tom@email.com", "github");
+		expect(engineer).toThrowError(new Error("Missing id"));
 	});
 });

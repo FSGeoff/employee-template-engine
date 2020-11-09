@@ -30,4 +30,8 @@ describe("Employee class", () => {
 		const worker = new Employee("Geoff Nix", 1, "nicewithands@gmail.com");
 		expect(worker.getRole()).toEqual("Employee");
 	});
+	it("should throw an error", () => {
+		const employee = new Employee(null, 4, "geoff@gmail.com");
+		expect(employee.getName()).toThrowError(new Error("Missing name"));
+	});
 });

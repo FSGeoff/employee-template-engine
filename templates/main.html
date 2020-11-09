@@ -30,7 +30,7 @@
 			integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
 			crossorigin="anonymous"
 		></script>
-		<script src="./style.css"></script>
+		<link href="../templates/style.css" rel="stylesheet"></link>
 	</head>
 	<body>
 		<div class="container">
@@ -38,16 +38,41 @@
             <h1 class="page-hdr" id="team-hdr">My Team</h1>
         </div>
         <div class="row">
-            <div class="col-sm">Intern</div>
-            <div class="col-sm">Manager</div>
-            <div class="col-sm">Engineer</div>
+            <div class="col-sm-3">
+                <div class="card">
+                <h2 class="card-hdr" id="emp-hdr">Intern</h2>
+                <div class="card-body">
+                  <p class="card-text">Name</p>
+                  <p class="card-text">Number</p>
+                  <p class="card-text">Email</p>
+                  <p class="card-text">School</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3"><div class="card">
+                <h2 class="card-hdr" id="emp-hdr">Manager</h2>
+                <div class="card-body">
+                  <p class="card-text">Name</p>
+                  <p class="card-text">Number</p>
+                  <p class="card-text">OfficeNumber</p>
+                  <p class="card-text">Email</p>
+                </div></div>
+            <div class="col-sm-3"><div class="card">
+                <h2 class="card-hdr" id="emp-hdr">Engineer</h2>
+                <div class="card-body">
+                  <p class="card-text">Name</p>
+                  <p class="card-text">Number</p>
+                  <p class="card-text">Email</p>
+                  <a class="github-link" >Github Username</a>
+                </div>
+              </div></div>
         </div>
 
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-sm">Intern</div>
 				<div class="col-sm">Manager</div>
 				<div class="col-sm">Engineer</div>
-			</div>
+			</div> -->
 		</div>
 	</body>
 </html>

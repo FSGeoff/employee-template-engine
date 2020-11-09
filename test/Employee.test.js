@@ -28,10 +28,6 @@ describe("Employee class", () => {
 	});
 	it("getRole function should return Employee object", () => {
 		const worker = new Employee("Geoff Nix", 1, "nicewithands@gmail.com");
-		expect(worker.getRole()).toEqual(
-			"Geoff Nix",
-			1,
-			"nicewithands@gmail.com"
-		);
+		expect(worker.getRole()).toEqual("Employee");
 	});
 });

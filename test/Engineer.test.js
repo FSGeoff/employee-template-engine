@@ -18,11 +18,6 @@ describe("Engineer class", () => {
 			"Jim@gmail.com",
 			"codingJim"
 		);
-		expect(engineer.getRole()).toEqual(
-			"Jim Brown",
-			5,
-			"Jim@gmail.com",
-			"codingJim"
-		);
+		expect(engineer.getRole()).toEqual("Engineer");
 	});
 });

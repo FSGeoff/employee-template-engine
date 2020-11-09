@@ -26,4 +26,12 @@ describe("Employee class", () => {
 		const worker = new Employee("Geoff Nix", 1, "nicewithands@gmail.com");
 		expect(worker.getEmail()).toEqual("nicewithands@gmail.com");
 	});
+	it("getRole function should return Employee object", () => {
+		const worker = new Employee("Geoff Nix", 1, "nicewithands@gmail.com");
+		expect(worker.getRole()).toEqual(
+			"Geoff Nix",
+			1,
+			"nicewithands@gmail.com"
+		);
+	});
 });

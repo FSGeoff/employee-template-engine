@@ -23,8 +23,7 @@ function createManager() {
 				validate: function (managerName) {
 					if (managerName.length < 2) {
 						console.log(managerName);
-						alert("Please enter a valid name");
-						return false;
+						return "Please enter a valid name";
 					}
 					return true;
 				},
@@ -36,8 +35,7 @@ function createManager() {
 				validate: function (managerId) {
 					if (managerId.length < 1) {
 						console.log(managerId);
-						alert("Please enter a valid number");
-						return false;
+						return "Please enter a valid number";
 					}
 					return true;
 				},
@@ -49,8 +47,7 @@ function createManager() {
 				validate: function (managerEmail) {
 					if (managerEmail.length < 7) {
 						console.log(managerEmail);
-						alert("Please enter a valid email");
-						return false;
+						return "Please enter a valid email";
 					}
 					return true;
 				},
@@ -62,8 +59,7 @@ function createManager() {
 				validate: function (managerOfficePhone) {
 					if (managerOfficePhone.length < 10) {
 						console.log(managerOfficePhone);
-						alert("Please enter a valid response");
-						return false;
+						return "Please enter a valid Office Phone Number";
 					}
 					return true;
 				},
@@ -94,11 +90,12 @@ function addToTeam() {
 			},
 		])
 		.then((answers) => {
-			switch (answers.choices) {
-				case answers.choices === "Intern":
+			const role = answers.choices;
+			switch (role) {
+				case "Intern":
 					addIntern();
 					break;
-				case answers.choices === "Engineer":
+				case "Engineer":
 					addEngineer();
 					break;
 				default:
@@ -117,8 +114,7 @@ function addEngineer() {
 				validation: function (engineerName) {
 					if (engineerName.length < 2) {
 						console.log(engineerName);
-						alert("Please enter a valid name");
-						return false;
+						return "Please enter a valid name";
 					}
 					return true;
 				},
@@ -130,8 +126,7 @@ function addEngineer() {
 				validation: function (engineerPhoneNumber) {
 					if (engineerPhoneNumber.length < 9) {
 						console.log(engineerPhoneNumber);
-						alert("Please enter a valid phone number");
-						return false;
+						return "Please enter a valid phone number";
 					}
 					return true;
 				},
@@ -143,8 +138,7 @@ function addEngineer() {
 				validation: function (engineerId) {
 					if (engineerId.length < 1) {
 						console.log(engineerId);
-						alert("Please enter a valid ID number");
-						return false;
+						return "Please enter a valid ID number";
 					}
 					return true;
 				},
@@ -156,8 +150,7 @@ function addEngineer() {
 				validation: function (engineerEmail) {
 					if (engineerEmail.length < 1) {
 						console.log(engineerEmail);
-						alert("Please enter a valid email");
-						return false;
+						return "Please enter a valid email";
 					}
 					return true;
 				},
@@ -169,8 +162,7 @@ function addEngineer() {
 				validation: function (engineerGithub) {
 					console.log(engineerGithub);
 					if (engineerGithub.length < 2) {
-						console.log("Please enter a valid Github username");
-						return false;
+						return "Please enter a valid Github username";
 					}
 					return true;
 				},
@@ -200,8 +192,7 @@ function createIntern() {
 				validation: function (internName) {
 					if (internName.length < 2) {
 						console.log(internName);
-						alert.log("Please enter a valid name");
-						return false;
+						return "Please enter a valid name";
 					}
 					return true;
 				},
@@ -213,8 +204,7 @@ function createIntern() {
 				validation: function (internId) {
 					if (internId.length < 1) {
 						console.log(internId);
-						alert("Please enter a valid ID number");
-						return false;
+						return "Please enter a valid ID number";
 					}
 					return true;
 				},
@@ -226,9 +216,9 @@ function createIntern() {
 				validation: function (internEmail) {
 					if (internEmail.length < 2) {
 						console.log(internEmail);
-						alert("Please enter a valid email");
+						return "Please enter a valid email";
 					}
-					return;
+					return true;
 				},
 			},
 			{
@@ -238,8 +228,7 @@ function createIntern() {
 				validation: function (internSchool) {
 					if (internSchool.length < 2) {
 						console.log(internSchool);
-						alert("Please enter a valid School name");
-						return false;
+						return "Please enter a valid School name";
 					}
 					return true;
 				},
@@ -260,10 +249,15 @@ function createIntern() {
 }
 
 function buildHTML() {
-	fs.writeFile("managerInfo.html", managerTemplate, "utf8", (err) => {
+	if (!fs.existsSync(OUTPUT_DIR)) {
+		fs.mkdirSync(OUTPUT_DIR, (err) => {
+			if (err) throw err;
+		});
+	}
+	fs.writeFileSync(outputPath, render(answers), (err) => {
 		if (err) throw err;
-		console.log("Successfully created document");
 	});
+	console.log("You're team has been created!");
 }
 
 createManager();

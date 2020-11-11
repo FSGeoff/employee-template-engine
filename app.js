@@ -32,10 +32,10 @@ function createManager() {
 			{
 				type: "input",
 				message: "Please input the id number of the Manager?",
-				name: "managerNumber",
-				validate: function (managerNumber) {
-					if (managerNumber.length < 1) {
-						console.log(managerNumber);
+				name: "managerId",
+				validate: function (managerId) {
+					if (managerId.length < 1) {
+						console.log(managerId);
 						alert("Please enter a valid number");
 						return false;
 					}
@@ -48,7 +48,7 @@ function createManager() {
 				name: "managerEmail",
 				validate: function (managerEmail) {
 					if (managerEmail.length < 7) {
-						console.log(managerEmail)
+						console.log(managerEmail);
 						alert("Please enter a valid email");
 						return false;
 					}
@@ -61,7 +61,7 @@ function createManager() {
 				name: "managerOfficePhone",
 				validate: function (managerOfficePhone) {
 					if (managerOfficePhone.length < 10) {
-						console.log(managerOfficePhone)
+						console.log(managerOfficePhone);
 						alert("Please enter a valid response");
 						return false;
 					}
@@ -71,6 +71,14 @@ function createManager() {
 		])
 		.then((answers) => {
 			console.log(answers);
+			employees.push(
+				new Manager(
+					answers.managerName,
+					answers.managerId,
+					answers.managerEmail,
+					answers.managerOfficePhone
+				)
+			);
 			addToTeam();
 		});
 }
@@ -108,9 +116,9 @@ function addEngineer() {
 				name: "engineerName",
 				validation: function (engineerName) {
 					if (engineerName.length < 2) {
-						console.log(engineerName)
+						console.log(engineerName);
 						alert("Please enter a valid name");
-						return false
+						return false;
 					}
 					return true;
 				},
@@ -121,7 +129,7 @@ function addEngineer() {
 				name: "engineerPhoneNumber",
 				validation: function (engineerPhoneNumber) {
 					if (engineerPhoneNumber.length < 9) {
-						console.log(engineerPhoneNumber)
+						console.log(engineerPhoneNumber);
 						alert("Please enter a valid phone number");
 						return false;
 					}
@@ -134,7 +142,7 @@ function addEngineer() {
 				name: "engineerId",
 				validation: function (engineerId) {
 					if (engineerId.length < 1) {
-						console.log(engineerId)
+						console.log(engineerId);
 						alert("Please enter a valid ID number");
 						return false;
 					}
@@ -147,7 +155,7 @@ function addEngineer() {
 				name: "engineerEmail",
 				validation: function (engineerEmail) {
 					if (engineerEmail.length < 1) {
-						console.log(engineerEmail)
+						console.log(engineerEmail);
 						alert("Please enter a valid email");
 						return false;
 					}
@@ -170,6 +178,14 @@ function addEngineer() {
 		])
 		.then((answers) => {
 			console.log(answers);
+			employees.push(
+				new Engineer(
+					answers.engineerName,
+					answers.engineerId,
+					answers.engineerEmail,
+					answers.engineerGithub
+				)
+			);
 			addToTeam();
 		});
 }
@@ -231,6 +247,14 @@ function createIntern() {
 		])
 		.then((answers) => {
 			console.log(answers);
+			employees.push(
+				new Intern(
+					answers.internName,
+					answers.internId,
+					answers.internEmail,
+					answers.internSchool
+				)
+			);
 			addToTeam();
 		});
 }
@@ -243,8 +267,6 @@ function buildHTML() {
 }
 
 createManager();
-
-
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)

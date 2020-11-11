@@ -90,13 +90,16 @@ function addToTeam() {
 			},
 		])
 		.then((answers) => {
-			const role = answers.choices;
+			const role = answers.addMembers;
 			switch (role) {
 				case "Intern":
 					addIntern();
 					break;
 				case "Engineer":
 					addEngineer();
+					break;
+				case "Finished Building Team":
+					buildHTML();
 					break;
 				default:
 					buildHTML();
@@ -182,7 +185,7 @@ function addEngineer() {
 		});
 }
 
-function createIntern() {
+function addIntern() {
 	inquirer
 		.prompt([
 			{
@@ -248,7 +251,7 @@ function createIntern() {
 		});
 }
 
-function buildHTML() {
+function buildHTML(answers) {
 	if (!fs.existsSync(OUTPUT_DIR)) {
 		fs.mkdirSync(OUTPUT_DIR, (err) => {
 			if (err) throw err;

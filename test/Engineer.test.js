@@ -1,28 +1,19 @@
-const { expect } = require("@jest/globals");
-const Engineer = require("../library/Engineer");
+const Engineer = require("../lib/Engineer");
 
-describe("Engineer class", () => {
-	it("Should accept the github username", () => {
-		const engineer = new Engineer(
-			"Jim Brown",
-			5,
-			"Jim@gmail.com",
-			"codingJim"
-		);
-		expect(engineer.githubUserName).toEqual("codingJim");
-	});
-	it("Should return the engineer object", () => {
-		const engineer = new Engineer(
-			"Jim Brown",
-			5,
-			"Jim@gmail.com",
-			"codingJim"
-		);
+test("Can set GitHUb account via constructor", () => {
+  const testValue = "GitHubUser";
+  const e = new Engineer("Foo", 1, "test@test.com", testValue);
+  expect(e.github).toBe(testValue);
+});
 
-		expect(engineer.getRole()).toEqual("Engineer");
-	});
-	it("should throw an error", () => {
-		const engineer = new Engineer("Tom", "Tom@email.com", "github");
-		expect(engineer).toThrowError(new Error("Missing id"));
-	});
+test("getRole() should return \"Engineer\"", () => {
+  const testValue = "Engineer";
+  const e = new Engineer("Foo", 1, "test@test.com", "GitHubUser");
+  expect(e.getRole()).toBe(testValue);
+});
+
+test("Can get GitHub username via getGithub()", () => {
+  const testValue = "GitHubUser";
+  const e = new Engineer("Foo", 1, "test@test.com", testValue);
+  expect(e.getGithub()).toBe(testValue);
 });

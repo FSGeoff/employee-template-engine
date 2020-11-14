@@ -1,0 +1,32 @@
+.text-center {
+	font-size: 75px;
+	color: seashell;
+}
+
+#top {
+	background-color: red;
+}
+
+.card-title-m {
+	background-color: royalblue;
+}
+
+.card-title-i {
+	background-color: seagreen;
+}
+
+.card-title-e {
+	background-color: yellow;
+}
+
+.card-header {
+	background-color: rgb(235, 235, 235);
+}
+
+.card-body {
+	background-color: rgb(235, 235, 235);
+}
+
+.employee-card {
+	margin: 5px;
+}

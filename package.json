@@ -21,6 +21,7 @@
 	},
 	"homepage": "https://github.com/FSGeoff/employee-template-engine#readme",
 	"dependencies": {
+		"eslint": "^7.13.0",
 		"inquirer": "^7.3.3",
 		"jest": "^26.6.3"
 	}

@@ -251,13 +251,13 @@ function addIntern() {
 		});
 }
 
-function buildHTML(answers) {
+function buildHTML() {
 	if (!fs.existsSync(OUTPUT_DIR)) {
 		fs.mkdirSync(OUTPUT_DIR, (err) => {
 			if (err) throw err;
 		});
 	}
-	fs.writeFileSync(outputPath, render(answers), (err) => {
+	fs.writeFileSync(outputPath, render(employees), (err) => {
 		if (err) throw err;
 	});
 	console.log("You're team has been created!");

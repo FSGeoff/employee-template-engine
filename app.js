@@ -114,7 +114,7 @@ function addEngineer() {
 				type: "input",
 				message: "Please input the name of the Engineer",
 				name: "engineerName",
-				validation: function (engineerName) {
+				validate: function (engineerName) {
 					if (engineerName.length < 2) {
 						console.log(engineerName);
 						return "Please enter a valid name";
@@ -126,7 +126,7 @@ function addEngineer() {
 				type: "input",
 				message: "Please input the phone number of the Engineer",
 				name: "engineerPhoneNumber",
-				validation: function (engineerPhoneNumber) {
+				validate: function (engineerPhoneNumber) {
 					if (engineerPhoneNumber.length < 9) {
 						console.log(engineerPhoneNumber);
 						return "Please enter a valid phone number";
@@ -138,7 +138,7 @@ function addEngineer() {
 				type: "input",
 				message: "Please enter the ID number for the Engineer",
 				name: "engineerId",
-				validation: function (engineerId) {
+				validate: function (engineerId) {
 					if (engineerId.length < 1) {
 						console.log(engineerId);
 						return "Please enter a valid ID number";
@@ -150,7 +150,7 @@ function addEngineer() {
 				type: "input",
 				message: "Please enter the email for the Engineer",
 				name: "engineerEmail",
-				validation: function (engineerEmail) {
+				validate: function (engineerEmail) {
 					if (engineerEmail.length < 1) {
 						console.log(engineerEmail);
 						return "Please enter a valid email";
@@ -162,7 +162,7 @@ function addEngineer() {
 				type: "input",
 				message: "Please enter the Github user name for the Engineer",
 				name: "engineerGithub",
-				validation: function (engineerGithub) {
+				validate: function (engineerGithub) {
 					console.log(engineerGithub);
 					if (engineerGithub.length < 2) {
 						return "Please enter a valid Github username";
@@ -192,7 +192,7 @@ function addIntern() {
 				type: "input",
 				message: "Please enter the name of the Intern",
 				name: "internName",
-				validation: function (internName) {
+				validate: function (internName) {
 					if (internName.length < 2) {
 						console.log(internName);
 						return "Please enter a valid name";
@@ -204,7 +204,7 @@ function addIntern() {
 				type: "input",
 				message: "Please enter the ID number of the Intern",
 				name: "internId",
-				validation: function (internId) {
+				validate: function (internId) {
 					if (internId.length < 1) {
 						console.log(internId);
 						return "Please enter a valid ID number";
@@ -216,7 +216,7 @@ function addIntern() {
 				type: "input",
 				message: "Please enter the email of the Intern",
 				name: "internEmail",
-				validation: function (internEmail) {
+				validate: function (internEmail) {
 					if (internEmail.length < 2) {
 						console.log(internEmail);
 						return "Please enter a valid email";
@@ -228,7 +228,7 @@ function addIntern() {
 				type: "input",
 				message: "Please enter the school of the Intern",
 				name: "internSchool",
-				validation: function (internSchool) {
+				validate: function (internSchool) {
 					if (internSchool.length < 2) {
 						console.log(internSchool);
 						return "Please enter a valid School name";

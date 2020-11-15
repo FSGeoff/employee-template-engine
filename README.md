@@ -26,7 +26,7 @@ The application has been extensively tested and has passed 17 of 17 unit tests.
 
 ____________________
 ## Demo
-[Test Demo Link](https://drive.google.com/file/d/1z8YCY-4Hc5aRc8QCLQ4OhH-ogaRlMLtu/view)<br/>
+[Unit Test Demo Link](https://drive.google.com/file/d/1z8YCY-4Hc5aRc8QCLQ4OhH-ogaRlMLtu/view)<br/>
 [Application Demo Link](https://drive.google.com/file/d/1jwDJuBmVknVWJhD-hSvVtYIFZ--4-mFZ/view)
 
 ____________________
